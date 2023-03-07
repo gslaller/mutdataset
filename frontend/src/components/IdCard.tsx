@@ -23,6 +23,11 @@ function LogoutDisplay() {
 
 function UserDisplay() {
     let { user } = useAuth();
+
+    if (user === null) {
+        return null;
+    }
+
     return (
         <div>
             <p>{user?.displayName}</p>
